@@ -20,12 +20,10 @@ function addTable(members) {
         if (midName == null) {
             midName = "";
         }
-
         var fullName = firstName + " " + midName + " " + lastName;
         
-        var row = document.createElement("tr");
         
-
+        var row = document.createElement("tr");
         var nameCell = document.createElement("td");
         var partyCell = document.createElement("td");
         var stateCell = document.createElement("td");
