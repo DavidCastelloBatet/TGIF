@@ -22,9 +22,16 @@ function addTable(members) {
         }
 
         var fullName = firstName + " " + midName + " " + lastName;
+        //var urlName = members[i].url;
         
         var row = document.createElement("tr");
+        var ancor = document.createElement("a");
         
+        //ancor.setAttribute("href", urlName);
+
+        //ancor.setAttribute("target", "_blank")
+
+        ancor.innerHTML = fullName;
 
         var nameCell = document.createElement("td");
         var partyCell = document.createElement("td");
@@ -32,7 +39,7 @@ function addTable(members) {
         var seniorCell = document.createElement("td");
         var votesCell = document.createElement("td");
 
-        nameCell.append(fullName);
+        nameCell.append(ancor);
 
         var party = members[i].party;
         partyCell.append(party);
