@@ -1,5 +1,4 @@
 // Global Variables
-//var members = document.getElementById("senate-body").innerHTML = JSON.stringify(data.results[0].members,null,2);
 var members = data.results[0].members;
 
 
