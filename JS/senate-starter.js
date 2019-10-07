@@ -11,7 +11,7 @@ addTable(members);
 // Function Declarations
 function addTable(members) {
     var table = document.getElementById("senate-body");
-    document.getElementById("senate-body").innerHTML = ""
+    
     for (var i = 0; i < members.length; i++) {
 
         var firstName = members[i].first_name;
@@ -21,7 +21,7 @@ function addTable(members) {
             midName = "";
         }
         var fullName = firstName + " " + midName + " " + lastName;
-        
+
         
         var row = document.createElement("tr");
         var nameCell = document.createElement("td");
