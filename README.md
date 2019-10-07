@@ -1,2 +1,0 @@
-# TGIF
-TGIF Project
