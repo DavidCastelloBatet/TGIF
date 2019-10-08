@@ -1,0 +1,19 @@
+nav {
+    background-color: rgb(184, 221, 238);
+    border: rgb(144, 226, 226) 1px solid;
+    margin-top: 20px;
+}
+
+body {
+    background-color: rgb(188, 212, 243);
+}
+
+section p {
+
+    font-size: 18px;
+
+}
+
+section {
+    margin-top: 20px;
+}
