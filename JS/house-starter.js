@@ -10,8 +10,8 @@ addTable(members);
 // Function Declarations
 function addTable(members) {
     var table = document.getElementById("house-body");
-    
-    for (var i = 0; i < members.length; i++) {
+
+    for (var i = 0, len = members.length; i < len; i++) {
 
         var firstName = members[i].first_name;
         var lastName = members[i].last_name;
@@ -20,16 +20,21 @@ function addTable(members) {
             midName = "";
         }
         var fullName = firstName + " " + midName + " " + lastName;
+        var urlName = members[i].url;
 
-        
         var row = document.createElement("tr");
+        var ancor = document.createElement("a");
+        ancor.setAttribute("href", urlName);
+        ancor.setAttribute("target", "_blank")
+        ancor.innerHTML = fullName;
+
         var nameCell = document.createElement("td");
         var partyCell = document.createElement("td");
         var stateCell = document.createElement("td");
         var seniorCell = document.createElement("td");
         var votesCell = document.createElement("td");
 
-        nameCell.append(fullName);
+        nameCell.append(ancor);
 
         var party = members[i].party;
         partyCell.append(party);
@@ -44,11 +49,7 @@ function addTable(members) {
         votesCell.append(votes);
 
 
-        row.append(nameCell);
-        row.append(partyCell);
-        row.append(stateCell);
-        row.append(seniorCell);
-        row.append(votesCell);
+        row.append(nameCell, partyCell, stateCell, seniorCell, votesCell);
 
         table.append(row);
     }
