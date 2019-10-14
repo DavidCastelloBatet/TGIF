@@ -1,6 +1,8 @@
 // Variables globales
 var members = data.results[0].members;
 
+// Objetos globales
+
 // Llamadas a funciones
 addTable(members);
 
@@ -31,21 +33,13 @@ function addTable(members) {
     var votesCell = document.createElement("td");
 
     nameCell.append(ancor);
-
-    var party = members[i].party;
-    partyCell.append(party);
-
-    var state = members[i].state;
-    stateCell.append(state);
-
-    var seniority = members[i].seniority;
-    seniorCell.append(seniority);
-
+    partyCell.append(members[i].party);
+    stateCell.append(members[i].state);
+    seniorCell.append(members[i].seniority);
     var votes = members[i].votes_with_party_pct;
-    votesCell.append(votes);
+    votesCell.append(votes.toFixed(2) + " %");
 
     row.append(nameCell, partyCell, stateCell, seniorCell, votesCell);
-
     table.append(row);
   }
 }

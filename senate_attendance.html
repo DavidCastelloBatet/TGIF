@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>House</title>
+    <title>Senate Attendance</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -52,7 +52,7 @@
               </li>
               <li class="nav-item  p-2 dropdown">
                 <a
-                  class="nav-link  dropdown-toggle active"
+                  class="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   href="#"
                   >Congress 113</a
@@ -68,7 +68,7 @@
               </li>
               <li class="nav-item  p-2 dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle active"
                   data-toggle="dropdown"
                   href="#"
                   >Attendance</a
@@ -105,49 +105,149 @@
 
       <!--Table container-->
       <div class="container">
-        <section>
-          <h2>Congressmen</h2>
-          <p>
-            The major power of the House is to pass federal legislation that
-            affects the entire country, although its bills must also be passed
-            by the Senate and further agreed to by the U.S. President before
-            becoming law (unless both the House and Senate re-pass the
-            legislation with a two-thirds majority in each chamber). The House
-            has some exclusive powers: the power to initiate revenue bills, to
-            impeach officials (impeached officials are subsequently tried in the
-            Senate), and to elect the U.S. President in case there is no
-            majority in the Electoral College.
-          </p>
-          <p>
-            Each U.S. state is represented in the House in proportion to its
-            population as measured in the census, but every state is entitled to
-            at least one representative.
-          </p>
-          <div class="container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Party</th>
-                  <th scope="col">State</th>
-                  <th scope="col">Seniority</th>
-                  <th scope="col">% of votes</th>
-                </tr>
-              </thead>
-              <tbody id="t-body"></tbody>
-            </table>
-          </div>
-        </section>
-      </div>
+        <h2>Attendance</h2>
+        <p>
+          The Constitution specifies that a majority of members constitutes a
+          quorum to do business in each house. Representatives and senators
+          rarely force the presence of a quorum by demanding quorum calls; thus,
+          in most cases, debates continue even if a majority is not present.
+        </p>
 
+        <p>
+          The Senate uses roll-call votes; a clerk calls out the names of all
+          the senators, each senator stating "aye" or "no" when his or her name
+          is announced. The House reserves roll-call votes for the most formal
+          matters, as a roll-call of all 435 representatives takes quite some
+          time; normally, members vote by electronic device. In the case of a
+          tie, the motion in question fails. In the Senate, the Vice President
+          may (if present) cast the tiebreaking vote.
+        </p>
+
+        <h2>Senate at a glance</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Party</th>
+              <th>Number of Reps</th>
+              <th>% Voted with Prty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Republican</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>Democrat</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>Independent</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Least Engaged (Bottom 10% Attendance)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Missed Votes</th>
+              <th>% Missed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Most Engaged (Top 10% Attendance)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number of Missed Votes</th>
+              <th>% Missed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>--</td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <footer>
         <div class="container cssfooter">
           <p>&#169; 2019 T G I F - All Rights Reserved</p>
         </div>
       </footer>
     </div>
-    <script src="./JS/pro-congress-113-house.js"></script>
-    <script src="./JS/main.js"></script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
