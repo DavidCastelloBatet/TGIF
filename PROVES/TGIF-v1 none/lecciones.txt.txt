@@ -1,0 +1,5 @@
+Para iniciar el server
+python -m http.server
+
+Accedo a mi página
+http://localhost:8000/home-starter-page.html
