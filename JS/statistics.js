@@ -1,11 +1,6 @@
 //variables y objetos globales
 var members = data.results[0].members;
 
-//llamada de funciones
-countAll(members);
-
-//declaracion de funciones
-
 var estadisticas = {
   democratNumberOfReps: 0,
   republicanNumberOfReps: 0,
@@ -21,6 +16,11 @@ var estadisticas = {
   most_loyal: [],
   totalStates: []
 };
+
+//llamada de funciones
+countAll(members);
+
+//declaracion de funciones
 
 function countAll(members) {
   var len = members.length;
