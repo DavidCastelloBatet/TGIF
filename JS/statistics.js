@@ -58,32 +58,34 @@ function countAll(members) {
   totPorcI = parseFloat(((totIndependent * 100) / totalForParty).toFixed(2));
   totalPorc = parseFloat(totPorcD + totPorcR + totPorcI);
 
-  //meto valores a objeto para mostrar en html
+  //meto representantes a objeto para mostrar en html
 
   stadistics.totDemocrat = totDemocrat;
-  document.getElementById("totDemocrat").innerHTML = stadistics.totDemocrat;
+  document.getElementById("totDemocrat").innerHTML =
+    stadistics.totDemocrat + " rep.";
 
   stadistics.totRepublican = totRepublican;
-  document.getElementById("totRepublican").innerHTML = stadistics.totRepublican;
+  document.getElementById("totRepublican").innerHTML =
+    stadistics.totRepublican + " rep.";
 
   stadistics.totIndependent = totIndependent;
   document.getElementById("totIndependent").innerHTML =
-    stadistics.totIndependent;
+    stadistics.totIndependent + " rep.";
 
   stadistics.totalForParty = totalForParty;
-  document.getElementById("totalForParty").innerHTML = stadistics.totalForParty;
+  document.getElementById("totalForParty").innerHTML =
+    stadistics.totalForParty + " rep.";
+
+  //meto % a objeto para mostrar en html
 
   stadistics.totPorcD = totPorcD;
-  document.getElementById("totPorcD").innerHTML = stadistics.totPorcD;
-
+  document.getElementById("totPorcD").innerHTML = stadistics.totPorcD + " %";
   stadistics.totPorcR = totPorcR;
-  document.getElementById("totPorcR").innerHTML = stadistics.totPorcR;
-
+  document.getElementById("totPorcR").innerHTML = stadistics.totPorcR + " %";
   stadistics.totPorcI = totPorcI;
-  document.getElementById("totPorcI").innerHTML = stadistics.totPorcI;
-
+  document.getElementById("totPorcI").innerHTML = stadistics.totPorcI + " %";
   stadistics.totalPorc = totalPorc;
-  document.getElementById("totalPorc").innerHTML = stadistics.totalPorc;
+  document.getElementById("totalPorc").innerHTML = stadistics.totalPorc + " %";
 
   console.log(totDemocrat);
   console.log(totRepublican);
