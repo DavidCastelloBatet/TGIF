@@ -1,7 +1,7 @@
 //variables y objetos globales
 var members = data.results[0].members;
 
-var estadisticas = {
+var stadistics = {
   democratNumberOfReps: 0,
   republicanNumberOfReps: 0,
   independentNumberOfReps: 0,
@@ -60,14 +60,30 @@ function countAll(members) {
 
   //meto valores a objeto para mostrar en html
 
-  democratNumberOfReps = totDemocrat;
-  republicanNumberOfReps = totRepublican;
-  independentNumberOfReps = totIndependent;
-  totalNumberOfReps = totalForParty;
-  totPorcentDemocrat = totPorcD;
-  totPorcentRepublican = totPorcR;
-  totPorcentIndependent = totPorcI;
-  totPorcent = totalPorc;
+  stadistics.totDemocrat = totDemocrat;
+  document.getElementById("totDemocrat").innerHTML = stadistics.totDemocrat;
+
+  stadistics.totRepublican = totRepublican;
+  document.getElementById("totRepublican").innerHTML = stadistics.totRepublican;
+
+  stadistics.totIndependent = totIndependent;
+  document.getElementById("totIndependent").innerHTML =
+    stadistics.totIndependent;
+
+  stadistics.totalForParty = totalForParty;
+  document.getElementById("totalForParty").innerHTML = stadistics.totalForParty;
+
+  stadistics.totPorcD = totPorcD;
+  document.getElementById("totPorcD").innerHTML = stadistics.totPorcD;
+
+  stadistics.totPorcR = totPorcR;
+  document.getElementById("totPorcR").innerHTML = stadistics.totPorcR;
+
+  stadistics.totPorcI = totPorcI;
+  document.getElementById("totPorcI").innerHTML = stadistics.totPorcI;
+
+  stadistics.totalPorc = totalPorc;
+  document.getElementById("totalPorc").innerHTML = stadistics.totalPorc;
 
   console.log(totDemocrat);
   console.log(totRepublican);
