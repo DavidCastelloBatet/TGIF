@@ -1,25 +1,78 @@
+
 nav {
-  background-color: rgb(184, 221, 238);
+  /*background-color: rgb(181, 210, 238);*/
+  background-image: linear-gradient(to bottom right, rgb(40, 168, 185), rgb(235, 232, 228));
   border: rgb(144, 226, 226) 1px solid;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+header{
+  
+  background-image: url(/IMAGES/us-capitol-banner.jpg);
+  background-size: cover;
+  background-position-x:  110px;
+  background-position-y:  -50px;
+  z-index: 1;
+ background-repeat: no-repeat;
+}
+#1,#2{
+  z-index: 0;
+}
+ul{
+  margin-right: 25px;
+  
+}
+li{
+  margin-left:  50px;
+  
+}
+
+.csslabel{
+  padding: 10px;
 }
 .cssfooter {
-  background-color: rgb(184, 221, 238);
+  background-image: linear-gradient(to bottom right, rgb(40, 168, 185), rgb(235, 232, 228)); /* Standard syntax (must be last) */
   border: rgb(144, 226, 226) 1px solid;
+  font-size: 20px;
+  color: blue;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   padding: 10px;
 }
+.cssborder{
+  border-style: ridge;
+  border-width: 3px;
+  border-color: rgb(181, 201, 245);
+}
 body {
-  background-color: rgb(188, 212, 243);
+  
+  background-image: linear-gradient(to bottom right, rgb(0, 225, 255), rgb(0, 255, 157)); /* Standard syntax (must be last) */
+ 
+}
+button{
+  margin-bottom: 10px;
+}
+.cssbutton{
+  background-color:rgb(195, 195, 235);
 }
 
 section p {
+  
   font-size: 18px;
 }
 
 section {
   margin-top: 20px;
+ 
+}
+h1,h2,h4{
+  padding: 10px 10px 10px 50px;
+  color: rgb(255, 255, 255);
+  background-color:rgb(150, 139, 139) ;
+}
+th{
+  color: rgb(0, 140, 255);
 }

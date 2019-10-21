@@ -15,37 +15,41 @@
   <body>
     <div class="container bg-light">
       <div class="container">
-        <header>
+        <header class="cssborder">
           <div class="row">
             <div class="col-9">
               <a href="./index.html"
                 ><img
                   src="./IMAGES/logoTGIF.png"
                   class="rounded"
-                  height="300"
+                  height="250"
                   class="img-fluid"
                   alt="logoTGIF"
+                  id="uno"
+                  
               /></a>
             </div>
 
-            <div class="row justify-content-center align-items-end">
+            <div class="row justify-content-center align-items-center">
               <div class="col-3">
                 <a href="mailto:info@tgif.net"
                   ><img
                     src="./IMAGES/179681.svg"
                     class="rounded"
-                    height="100"
+                    height="50"
                     class="img-fluid"
                     alt="logo mail"
-                /></a>
+                    id="dos"
+                    
+                />info@tgif.net</a>
               </div>
             </div>
           </div>
         </header>
       </div>
       <div class="container">
-        <nav>
-          <div class="container">
+        <nav class="cssborder">
+          <div class="container d-flex justify-content-around">
             <ul class="nav nav-pills p-3 font-weight-bold">
               <li class="nav-item p-2">
                 <a class="nav-link" href="./index.html">Home</a>
@@ -119,31 +123,48 @@
             ambassadors, and other federal uniformed officers, as well as trial
             of federal officials impeached by the House.
           </p>
-          <div class="container">
-            <table class="table">
-              <thead class="cssposFixed">
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Party</th>
-                  <th scope="col">State</th>
-                  <th scope="col">Seniority</th>
-                  <th scope="col">% of votes</th>
+          <div class="row filterAreaContainer cssbutton">
+            <div class="filterCheckboxes col-6 font-weight-bold csslabel">
+                <label>Filter by Party:</label>
+                <label><input type="checkbox" name="Party" value="D">Democrat</label>
+                <label><input type="checkbox" name="Party" value="R">Republican</label>
+                <label><input type="checkbox" name="Party" value="I">Independent</label>
+            </div>
+
+            <div class="dropdownArea col-6 d-flex justify-content-end font-weight-bold csslabel">
+                <label for="dropDownBody">Filter by State
+                    <select class="dropdown" id="dropDownBody" name="states">
+                        <option value="All" selected>All</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <table id="senate-data" class="table table-borderless table-striped table-hover tableDisplay">
+            <thead>
+                <tr class="heightThead">
+                    <th>Name</th>
+                    <th>Party</th>
+                    <th>State</th>
+                    <th>Seniority</th>
+                    <th>% Votes with Party</th>
                 </tr>
-              </thead>
-              <tbody id="t-body"></tbody>
-            </table>
-          </div>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
         </section>
       </div>
 
       <footer>
-        <div class="container cssfooter">
+        <div class="container cssfooter cssborder">
           <p>&#169; 2019 T G I F - All Rights Reserved</p>
         </div>
       </footer>
     </div>
     <script src="./JS/pro-Congress-113-senate.js"></script>
-    <script src="./JS/main.js"></script>
+    <script src="./JS/main2.js"></script>
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
