@@ -1,39 +1,44 @@
-
 nav {
   /*background-color: rgb(181, 210, 238);*/
-  background-image: linear-gradient(to bottom right, rgb(40, 168, 185), rgb(235, 232, 228));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(40, 168, 185),
+    rgb(235, 232, 228)
+  );
   border: rgb(144, 226, 226) 1px solid;
   margin-top: 15px;
   margin-bottom: 10px;
   font-size: 20px;
 }
 
-header{
-  
+header {
   background-image: url(/IMAGES/us-capitol-banner.jpg);
   background-size: cover;
-  background-position-x:  110px;
-  background-position-y:  -50px;
+  background-position-x: 110px;
+  background-position-y: -50px;
   z-index: 1;
- background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
-#1,#2{
+#1,
+#2 {
   z-index: 0;
 }
-ul{
+ul {
   margin-right: 25px;
-  
 }
-li{
-  margin-left:  50px;
-  
+li {
+  margin-left: 50px;
 }
 
-.csslabel{
+.csslabel {
   padding: 10px;
 }
 .cssfooter {
-  background-image: linear-gradient(to bottom right, rgb(40, 168, 185), rgb(235, 232, 228)); /* Standard syntax (must be last) */
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(40, 168, 185),
+    rgb(235, 232, 228)
+  ); /* Standard syntax (must be last) */
   border: rgb(144, 226, 226) 1px solid;
   font-size: 20px;
   color: blue;
@@ -42,37 +47,80 @@ li{
   text-align: center;
   padding: 10px;
 }
-.cssborder{
+.cssborder {
   border-style: ridge;
   border-width: 3px;
   border-color: rgb(181, 201, 245);
 }
 body {
-  
-  background-image: linear-gradient(to bottom right, rgb(0, 225, 255), rgb(0, 255, 157)); /* Standard syntax (must be last) */
- 
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(0, 225, 255),
+    rgb(0, 255, 157)
+  ); /* Standard syntax (must be last) */
 }
-button{
+button {
   margin-bottom: 10px;
 }
-.cssbutton{
-  background-color:rgb(195, 195, 235);
+.cssbutton {
+  background-color: rgb(195, 195, 235);
 }
 
 section p {
-  
   font-size: 18px;
 }
 
 section {
   margin-top: 20px;
- 
 }
-h1,h2,h4{
+h1,
+h2,
+h4 {
   padding: 10px 10px 10px 50px;
   color: rgb(255, 255, 255);
-  background-color:rgb(150, 139, 139) ;
+  background-color: rgb(150, 139, 139);
 }
-th{
+th {
   color: rgb(0, 140, 255);
 }
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(41, 132, 216) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*
+htmlpart 
+
+<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+*/

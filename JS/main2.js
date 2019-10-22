@@ -33,6 +33,8 @@ fetch(jason, {
   .then(data => {
     console.log(data);
     members = data.results[0].members;
+    var node = document.getElementById("loader");
+    node.parentNode.removeChild(node);
     showMemberDropDown(members);
     createStates();
     createTable();
