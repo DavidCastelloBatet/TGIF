@@ -89,6 +89,7 @@ th {
   position: relative;
   width: 64px;
   height: 64px;
+  margin-left: 45%;
 }
 .lds-ring div {
   box-sizing: border-box;
