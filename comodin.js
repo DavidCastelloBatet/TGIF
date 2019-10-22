@@ -15,9 +15,11 @@ headers: new Headers({
 })
 } ).then(function(response){
 return response.json();
+
 }).then (function(json){
     app.candidates = json.results[0].members;
     calcula(json.results[0].members);
+    
 }).catch(function(){
     if (app.candidates == undefined){
         console.log("Fail");
@@ -84,5 +86,3 @@ i posar un id="loader" alla on vagi
 
 
 */
-
-
