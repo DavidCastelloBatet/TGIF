@@ -19,8 +19,8 @@ header {
   z-index: 1;
   background-repeat: no-repeat;
 }
-#1,
-#2 {
+#uno,
+#dos {
   z-index: 0;
 }
 ul {
