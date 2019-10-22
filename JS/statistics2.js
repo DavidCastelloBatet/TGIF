@@ -1,15 +1,5 @@
-var members = data.results[0].members;
+//var members = data.results[0].members;
 
-switch (opc) {
-  case "congress":
-    console.log("pagina congress");
-
-    break;
-
-  default:
-    console.log("pagina senado");
-    break;
-}
 //TOTAL NUMBER OF MEMBERS
 var democrats = [];
 var republicans = [];
@@ -23,29 +13,64 @@ var statistics;
 var bottom10PctMembersByVotesWithPartyHouse = [];
 var top10PctMembersByVotesWithPartyHouse = [];
 
+var jason = "";
+
+switch (opc) {
+  case "congress":
+    var jason = "https://api.propublica.org/congress/v1/113/house/members.json";
+
+    console.log(jason);
+    break;
+
+  default:
+    var jason =
+      "https://api.propublica.org/congress/v1/113/senate/members.json";
+
+    console.log(jason);
+
+    break;
+}
+var members = [];
+fetch(jason, {
+  method: "GET",
+  headers: {
+    "X-API-Key": "1BwNGhOrT1o9ZCBj4SrIehWcR0QTAXPnAq7HvLcT"
+  }
+})
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    members = data.results[0].members;
+    getMembersFromParties(members);
+    fillTheObject();
+    partyPctVoted(allDemocratsVotedPercantages);
+    partyPctVoted(allRepublicansVotedPercantages);
+    partyPctVoted(allIndependentsVotedPercantages);
+    getBottomAndTop10PctLoyaltyHouse(
+      sortMembersByVotesWithPartyPctHouse(members),
+      true
+    );
+    getBottomAndTop10PctLoyaltyHouse(
+      sortMembersByVotesWithPartyPctHouse(members),
+      false
+    );
+    createLeastAndMostLoyalTables(
+      "houseLeastLoyalTable",
+      bottom10PctMembersByVotesWithPartyHouse
+    );
+    createLeastAndMostLoyalTables(
+      "houseMostLoyalTable",
+      top10PctMembersByVotesWithPartyHouse
+    );
+    createTopTableHouse(statistics, "houseLoyaltyTable");
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
 // call to functions
-getMembersFromParties(members);
-fillTheObject();
-partyPctVoted(allDemocratsVotedPercantages);
-partyPctVoted(allRepublicansVotedPercantages);
-partyPctVoted(allIndependentsVotedPercantages);
-getBottomAndTop10PctLoyaltyHouse(
-  sortMembersByVotesWithPartyPctHouse(members),
-  true
-);
-getBottomAndTop10PctLoyaltyHouse(
-  sortMembersByVotesWithPartyPctHouse(members),
-  false
-);
-createLeastAndMostLoyalTables(
-  "houseLeastLoyalTable",
-  bottom10PctMembersByVotesWithPartyHouse
-);
-createLeastAndMostLoyalTables(
-  "houseMostLoyalTable",
-  top10PctMembersByVotesWithPartyHouse
-);
-createTopTableHouse(statistics, "houseLoyaltyTable");
 
 //create functions
 

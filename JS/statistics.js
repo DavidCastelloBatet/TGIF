@@ -1,14 +1,4 @@
-var members = data.results[0].members;
-switch (opc) {
-  case "congress":
-    console.log("pagina congress");
-
-    break;
-
-  default:
-    console.log("pagina senado");
-    break;
-}
+//var members = data.results[0].members;
 
 //TOTAL NUMBER OF MEMBERS
 var democrats = [];
@@ -23,8 +13,67 @@ var allIndependentsVotedPercantages = [];
 var bottom10PctMembersByMissedVotesHouse = [];
 var top10PctMembersByMissedVotesHouse = [];
 
-// call to functions
+//selector jason para fetch
+console.log(opc);
 
+var jason = "";
+
+switch (opc) {
+  case "congress":
+    var jason = "https://api.propublica.org/congress/v1/113/house/members.json";
+
+    console.log(jason);
+    break;
+
+  default:
+    var jason =
+      "https://api.propublica.org/congress/v1/113/senate/members.json";
+
+    console.log(jason);
+
+    break;
+}
+var members = [];
+fetch(jason, {
+  method: "GET",
+  headers: {
+    "X-API-Key": "1BwNGhOrT1o9ZCBj4SrIehWcR0QTAXPnAq7HvLcT"
+  }
+})
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+    members = data.results[0].members;
+    getMembersFromParties(members);
+    fillTheObject();
+    getBottomAndTop10PctAttendanceHouse(
+      sortMembersByMissedVotesHouse(members),
+      true
+    );
+    getBottomAndTop10PctAttendanceHouse(
+      sortMembersByMissedVotesHouse(members),
+      false
+    );
+    createLeastAndMostEngagedTables(
+      "leastEngagedHouse",
+      bottom10PctMembersByMissedVotesHouse
+    );
+    createLeastAndMostEngagedTables(
+      "mostEngagedHouse",
+      top10PctMembersByMissedVotesHouse
+    );
+    createTopTable(statistics, "topTableBodyHouse");
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+//function calls
+
+// call to functions
+/*
 getMembersFromParties(members);
 fillTheObject();
 getBottomAndTop10PctAttendanceHouse(
@@ -44,7 +93,7 @@ createLeastAndMostEngagedTables(
   top10PctMembersByMissedVotesHouse
 );
 createTopTable(statistics, "topTableBodyHouse");
-
+*/
 // create function
 
 function getMembersFromParties(members) {
