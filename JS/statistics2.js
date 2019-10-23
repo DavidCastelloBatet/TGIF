@@ -57,6 +57,7 @@ fetch(jason, {
       sortMembersByVotesWithPartyPctHouse(members),
       false
     );
+
     createLeastAndMostLoyalTables(
       "houseLeastLoyalTable",
       bottom10PctMembersByVotesWithPartyHouse

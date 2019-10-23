@@ -1,6 +1,7 @@
 //var members = data.results[0].members;
 
 //selector jason para fetch
+console.log(document.title);
 
 var jason = "";
 
@@ -48,6 +49,7 @@ fetch(jason, {
 //tabla
 
 function createTable() {
+  let message = true;
   var tableBody = document.getElementById("tableBody");
   tableBody.innerHTML = "";
   for (var i = 0; i < members.length; i++) {
@@ -72,13 +74,22 @@ function createTable() {
     var cells = [link, party, state, seniority, votesParty];
 
     if (showMember(members[i])) {
+      message = false;
       for (var j = 0; j < cells.length; j++) {
         var tableCell = document.createElement("td");
         tableCell.append(cells[j]);
         tableRow.append(tableCell);
       }
-      document.getElementById("tableBody").append(tableRow);
+      tableBody.append(tableRow);
     }
+  }
+
+  if (message) {
+    var tableRow = document.createElement("tr");
+    var tableCell = document.createElement("td");
+    tableCell.innerHTML = "No data!";
+    tableRow.append(tableCell);
+    tableBody.append(tableRow);
   }
 }
 
@@ -110,7 +121,7 @@ function showMember(member) {
       (options === member.state || options === "All")
     ) {
       return true;
-    } else if (checkedCheckboxes.length === 0 && options === member.state) {
+    } else if (checkedCheckboxes.length == 0 && options === member.state) {
       return true;
     }
   }
