@@ -1,14 +1,13 @@
+//declaracion variables i arrays
+
 //var members = data.results[0].members;
 
-//TOTAL NUMBER OF MEMBERS
 var democrats = [];
 var republicans = [];
 var independents = [];
-//VOTED WITH PARTY ALL PERCENTAGES
-var allDemocratsVotedPercantages = [];
-var allRepublicansVotedPercantages = [];
-var allIndependentsVotedPercantages = [];
-//PARTY LOYALTY 10%
+var allDemoVotPercent = [];
+var allRepuVotPercent = [];
+var allIndepVotPercent = [];
 var statistics;
 var bottom10PctMembersByVotesWithPartyHouse = [];
 var top10PctMembersByVotesWithPartyHouse = [];
@@ -47,9 +46,9 @@ fetch(jason, {
     node.parentNode.removeChild(node);
     getMembersFromParties(members);
     fillTheObject();
-    partyPctVoted(allDemocratsVotedPercantages);
-    partyPctVoted(allRepublicansVotedPercantages);
-    partyPctVoted(allIndependentsVotedPercantages);
+    partyPctVoted(allDemoVotPercent);
+    partyPctVoted(allRepuVotPercent);
+    partyPctVoted(allIndepVotPercent);
     getBottomAndTop10PctLoyaltyHouse(
       sortMembersByVotesWithPartyPctHouse(members),
       true
@@ -72,25 +71,21 @@ fetch(jason, {
     console.log(error);
   });
 
-// call to functions
+// llamada a funciones desde dentro de fetch
 
-//create functions
+//creacion de funciones
 
 function getMembersFromParties(members) {
-  //loop through all members
   for (var i = 0; i < members.length; i++) {
-    //if they are democrats
     if (members[i].party === "D") {
-      //make an array of democrats
       democrats.push(members[i]);
-      //make an array or percentage votes for democrats
-      allDemocratsVotedPercantages.push(members[i].votes_with_party_pct);
+      allDemoVotPercent.push(members[i].votes_with_party_pct);
     } else if (members[i].party === "R") {
       republicans.push(members[i]);
-      allRepublicansVotedPercantages.push(members[i].votes_with_party_pct);
+      allRepuVotPercent.push(members[i].votes_with_party_pct);
     } else {
       independents.push(members[i]);
-      allIndependentsVotedPercantages.push(members[i].votes_with_party_pct);
+      allIndepVotPercent.push(members[i].votes_with_party_pct);
     }
   }
 }
@@ -108,7 +103,7 @@ function partyPctVoted(arr) {
   return average;
 }
 
-//sort array of members by votes with party pct
+//ordeno array votos x miembro
 function sortMembersByVotesWithPartyPctHouse() {
   var allMembers = Array.from(members);
   allMembers.sort(function(a, b) {
@@ -125,7 +120,7 @@ function getBottomAndTop10PctLoyaltyHouse(
   sortMembersByVotesWithPartyPctHouse,
   acc
 ) {
-  //calculate 10percent of members and round the number to have a cut off point
+  //calculo del 10%de miembros, redondeo i punto de corte
   var num = Math.round(sortMembersByVotesWithPartyPctHouse.length * 0.1);
   if (acc) {
     for (var i = 0; i < num; i++) {
@@ -173,7 +168,7 @@ function getBottomAndTop10PctLoyaltyHouse(
   }
 }
 
-//TABLES
+//tablas
 
 function fillTheObject() {
   statistics = {
@@ -181,20 +176,18 @@ function fillTheObject() {
       {
         party: "Democrats",
         number_of_members: democrats.length,
-        votes_with_party_pct:
-          partyPctVoted(allDemocratsVotedPercantages).toFixed(2) + " %"
+        votes_with_party_pct: partyPctVoted(allDemoVotPercent).toFixed(2) + " %"
       },
       {
         party: "Republicans",
         number_of_members: republicans.length,
-        votes_with_party_pct:
-          partyPctVoted(allRepublicansVotedPercantages).toFixed(2) + " %"
+        votes_with_party_pct: partyPctVoted(allRepuVotPercent).toFixed(2) + " %"
       },
       {
         party: "Independents",
         number_of_members: independents.length,
         votes_with_party_pct:
-          partyPctVoted(allIndependentsVotedPercantages).toFixed(2) + " %"
+          partyPctVoted(allIndepVotPercent).toFixed(2) + " %"
       },
       {
         party: "Total",
@@ -229,7 +222,7 @@ function createLeastAndMostLoyalTables(idname, arr) {
     var tableRow = document.createElement("tr");
     var firstName = arr[i].first_name;
     var middleName = arr[i].middle_name;
-    //some members don't have middle names
+
     if (middleName === null) {
       middleName = "";
     }
@@ -251,16 +244,15 @@ function getTotalAvgPercentage(statistics) {
   if (statistics.parties[2].number_of_members == 0) {
     statistics.parties[3].votes_with_party_pct =
       (
-        (partyPctVoted(allDemocratsVotedPercantages) +
-          partyPctVoted(allRepublicansVotedPercantages)) /
+        (partyPctVoted(allDemoVotPercent) + partyPctVoted(allRepuVotPercent)) /
         2
       ).toFixed(2) + " %";
   } else {
     statistics.parties[3].votes_with_party_pct =
       (
-        (partyPctVoted(allDemocratsVotedPercantages) +
-          partyPctVoted(allRepublicansVotedPercantages) +
-          partyPctVoted(allIndependentsVotedPercantages)) /
+        (partyPctVoted(allDemoVotPercent) +
+          partyPctVoted(allRepuVotPercent) +
+          partyPctVoted(allIndepVotPercent)) /
         3
       ).toFixed(2) + " %";
   }

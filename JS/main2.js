@@ -1,7 +1,6 @@
 //var members = data.results[0].members;
 
 //selector jason para fetch
-console.log(opc);
 
 var jason = "";
 
@@ -9,14 +8,11 @@ switch (opc) {
   case "congress":
     var jason = "https://api.propublica.org/congress/v1/113/house/members.json";
 
-    console.log(jason);
     break;
 
   default:
     var jason =
       "https://api.propublica.org/congress/v1/113/senate/members.json";
-
-    console.log(jason);
 
     break;
 }
@@ -55,12 +51,11 @@ function createTable() {
   var tableBody = document.getElementById("tableBody");
   tableBody.innerHTML = "";
   for (var i = 0; i < members.length; i++) {
-    //for each member build a tr
     var tableRow = document.createElement("tr");
     //for each row create 5 cells (full name, party, state, seniority, precentage of votes)
     var firstName = members[i].first_name;
     var middleName = members[i].middle_name;
-    //some members don't have middle names
+    //control de los que no tienen middleName
     if (middleName === null) {
       middleName = "";
     }
@@ -69,12 +64,11 @@ function createTable() {
 
     var link = document.createElement("a");
     link.setAttribute("href", members[i].url);
-    //    completeName.link = members[i].url;
     link.innerHTML = completeName;
     var party = members[i].party;
     var state = members[i].state;
     var seniority = members[i].seniority;
-    var votesParty = "% " + members[i].votes_with_party_pct;
+    var votesParty = members[i].votes_with_party_pct + " %";
     var cells = [link, party, state, seniority, votesParty];
 
     if (showMember(members[i])) {
