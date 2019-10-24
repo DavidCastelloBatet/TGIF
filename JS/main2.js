@@ -87,7 +87,8 @@ function createTable() {
   if (message) {
     var tableRow = document.createElement("tr");
     var tableCell = document.createElement("td");
-    tableCell.innerHTML = "No data!";
+    tableRow.append(tableCell);
+    tableCell.innerHTML = "There are no Independent members in the chamber.";
     tableRow.append(tableCell);
     tableBody.append(tableRow);
   }

@@ -57,11 +57,14 @@ fetch(jason, {
       sortMembersByVotesWithPartyPctHouse(members),
       false
     );
-
+    var node = document.getElementById("loader");
+    node.parentNode.removeChild(node);
     createLeastAndMostLoyalTables(
       "houseLeastLoyalTable",
       bottom10PctMembersByVotesWithPartyHouse
     );
+    var node = document.getElementById("loader");
+    node.parentNode.removeChild(node);
     createLeastAndMostLoyalTables(
       "houseMostLoyalTable",
       top10PctMembersByVotesWithPartyHouse

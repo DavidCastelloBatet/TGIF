@@ -55,7 +55,11 @@ fetch(jason, {
       sortMembersByMissedVotesHouse(members),
       false
     );
+    var node = document.getElementById("loader");
+    node.parentNode.removeChild(node);
     createLeastAndMostEngagedTables("leastEngagedHouse", bot10PctMemByMisVotH);
+    var node = document.getElementById("loader");
+    node.parentNode.removeChild(node);
     createLeastAndMostEngagedTables("mostEngagedHouse", top10PctMemByMisVotH);
     createTopTable(statistics, "topTableBodyHouse");
   })
